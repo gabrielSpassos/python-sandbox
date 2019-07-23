@@ -37,7 +37,7 @@ def create_file(folder):
     file_to_create = folder + os.path.sep + file_name
     print('Creating file', file_to_create)
     with open(file_to_create, 'w') as file:
-        file.write("# Hello World!")
+        file.write("Hello World!")
 
 
 def get_files():
