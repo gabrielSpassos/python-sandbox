@@ -1,6 +1,7 @@
 __pycache__
 *.backup
 /resources/
+/s3-downloads/
 
 ### IntelliJ IDEA ###
 .idea
