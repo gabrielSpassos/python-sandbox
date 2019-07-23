@@ -1,0 +1,10 @@
+__pycache__
+*.backup
+/resources/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.jasper
