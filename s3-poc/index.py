@@ -1,9 +1,9 @@
 #!/usr/bin/python
-import create_folder_path
+import files_service
 
 
 def run():
-    files = create_folder_path.get_files()
+    files = files_service.get_files()
     print(files)
 
 if __name__ == '__main__':
