@@ -6,6 +6,7 @@ working_diretory_final_folder = 'resources'
 file_regex = '*.txt'
 file_name = 'test.txt'
 
+
 def get_files_from_directory(folder):
     files = []
     files_path = folder + os.path.sep + file_regex
@@ -31,11 +32,13 @@ def get_current_working_diretory():
 def is_working_directory_with_files(files):
     return len(files) > 0
 
+
 def create_file(folder):
     file_to_create = folder + os.path.sep + file_name
     print('Creating file', file_to_create)
     with open(file_to_create, 'w') as file:
         file.write("# Hello World!")
+
 
 def get_files():
     files = get_files_from_directory(get_current_working_diretory())
@@ -45,3 +48,7 @@ def get_files():
         files = get_files_from_directory(get_current_working_diretory())
 
     return files
+
+
+def get_file_name_from_full_path(file_with_path):
+    return os.path.basename(file_with_path)
