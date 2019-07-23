@@ -6,6 +6,8 @@
 
 * Create's `resources` folder if it isn't existing and create a test file
 
+* After sending file to s3, downloads back files to `s3-downloads` folder
+
 * Todo List:
 
 - [x] Get files from folder
@@ -13,6 +15,8 @@
 - [x] Create file if folder is empty
 - [x] Create Amazon S3 client
 - [x] Send files to S3 bucket
+- [x] Get Keys from S3
+- [x] Download files from S3
 
 ### Usage
 
