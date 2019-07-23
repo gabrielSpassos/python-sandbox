@@ -17,4 +17,12 @@
 pip3 install -r requirements.txt
 ```
 
-* Put credentials file into `~/.aws/credentials`
+* Put [credentials](https://github.com/gabrielSpassos/python-sandbox/blob/master/s3-poc/credentials) file into `~/.aws/credentials`
+
+* Change the values `$change_this_value` into credentials to yours keys
+
+* Maybe you wanna change the profile at [amazon_client](https://github.com/gabrielSpassos/python-sandbox/blob/master/s3-poc/amazon_client.py)
+
+```python
+session = boto3.Session(profile_name='$profile')
+```
