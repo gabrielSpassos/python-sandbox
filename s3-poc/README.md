@@ -7,8 +7,8 @@
 - [x] Get files from folder
 - [x] Create folder if it isn't existing
 - [x] Create file if folder is empty
-- [ ] Create Amazon S3 client
-- [ ] Send files to S3 bucket
+- [x] Create Amazon S3 client
+- [x] Send files to S3 bucket
 
 ### Usage
 
@@ -25,4 +25,10 @@ pip3 install -r requirements.txt
 
 ```python
 session = boto3.Session(profile_name='$profile')
+```
+
+* Change the bucket name at [index](https://github.com/gabrielSpassos/python-sandbox/blob/master/s3-poc/index.py)
+
+```python
+bucket_name = 'your_bucket_name'
 ```
