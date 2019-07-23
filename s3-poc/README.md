@@ -36,3 +36,8 @@ session = boto3.Session(profile_name='$profile')
 ```python
 bucket_name = 'your_bucket_name'
 ```
+
+* Just run
+```
+python3 index.py
+```
