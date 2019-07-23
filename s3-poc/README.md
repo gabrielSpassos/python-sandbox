@@ -2,6 +2,10 @@
 
 * Get local file and send to Amazon S3 Bucket
 
+* Sends every .txt file from `resources` folder to S3 Bucket
+
+* Create's `resources` folder if it isn't existing and create a test file
+
 * Todo List:
 
 - [x] Get files from folder
