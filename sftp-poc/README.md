@@ -2,9 +2,9 @@
 
 * Todo list:
 
-- [] Get file from sftp
-- [] Update file
-- [] Save new file at sftp
+- [ ] Get file from sftp
+- [ ] Update file
+- [ ] Save new file at sftp
 
 ## Usage
 
