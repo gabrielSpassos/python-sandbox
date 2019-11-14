@@ -15,3 +15,8 @@ print(2 > 1) # comparacao maior
 print(2 >= 2) # comparacao maior ou igual
 print(1 < 2) # comparacao menor
 print(2 <= 2) # comparacao menor ou igual
+
+first_name = "Gabriel"
+last_name = "Passos"
+
+print(first_name  + " " + last_name)
