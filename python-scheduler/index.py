@@ -8,6 +8,7 @@ import requests
 API_ENDPOINT_SWAPI_STARTSHIPS = "https://swapi.co/api/starships/"
 START_STARSHIP_ID = 0
 
+
 def task():
     print('Datetime:', datetime.now())
     print('### Request ###')
@@ -36,10 +37,6 @@ def buildUrl(starship_id):
 schedule.every().minute.at(":21").do(task)
 
 
-def run():
+if __name__ == '__main__':
     while True:
         schedule.run_pending()
-
-
-if __name__ == '__main__':
-    run()
