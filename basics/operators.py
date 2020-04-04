@@ -29,3 +29,9 @@ for i in list:
 
 for i in range(10, 20, 2):
     print(i)
+
+name = "  Gabriel Santos dos Passos"
+print(name)
+print(name.strip())
+print(name.split())
+print(name.find("dos"))
