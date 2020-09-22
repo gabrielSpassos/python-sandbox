@@ -4,6 +4,12 @@
 ```
 python manage.py runserver
 ```
+[Index](http://localhost:8000/)
+
+[Basic template](http://localhost:8000/polls)
+
+---
+
 
 * Create tables at database
 ```
@@ -24,3 +30,11 @@ python manage.py sqlmigrate polls 0001
 ```
 python manage.py migrate
 ```
+---
+
+* Create admin user
+```
+python manage.py createsuperuser
+```
+
+* [Admin page](http://localhost:8000/admin)
