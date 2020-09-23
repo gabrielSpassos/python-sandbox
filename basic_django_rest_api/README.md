@@ -29,6 +29,11 @@ python3 manage.py migrate
 python3 manage.py makemigrations
 ```
 
+* Clean database
+```shell script
+python3 manage.py flush
+```
+
 * Start server
 ```shell script
 python3 manage.py runserver
