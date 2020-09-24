@@ -1,0 +1,8 @@
+__pycache__
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.jasper

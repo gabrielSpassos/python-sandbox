@@ -1,7 +1,7 @@
-import boto3
-import json
-import files_service
 import re
+
+import boto3
+import files_service
 
 session = boto3.Session(profile_name='dev')
 s3_client = session.client('s3')
