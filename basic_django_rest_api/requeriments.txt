@@ -2,3 +2,5 @@ djangorestframework
 django-oauth-toolkit
 rest_condition
 django-filter
+django-rest-swagger
+drf-yasg

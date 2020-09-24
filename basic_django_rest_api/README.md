@@ -43,6 +43,10 @@ python3 manage.py runserver
 
 #### Usage
 
+[Swagger UI](http://localhost:8000/swagger/)
+
+__or__
+
 ```shell script
 curl --location --request POST 'http://localhost:8000/o/token/' \
 --header 'content-type: application/x-www-form-urlencoded' \
