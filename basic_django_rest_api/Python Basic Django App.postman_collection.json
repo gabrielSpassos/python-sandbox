@@ -100,16 +100,103 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Albums",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/albums/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"albums",
+						""
+					],
+					"query": [
+						{
+							"key": "date_gte",
+							"value": "2020-09-23",
+							"disabled": true
+						},
+						{
+							"key": "date_lte",
+							"value": "2020-09-25",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Members",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/members/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"members",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bands",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/bands/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"bands",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
 		{
-			"id": "184dcba4-6f57-41c1-9295-d9ffc8a5c695",
+			"id": "91ead081-4f98-4ca1-a062-4e4d96c6a38a",
 			"key": "variable_key",
 			"value": ""
 		},
 		{
-			"id": "b1743c50-72e8-4372-a9c3-cef4e1b08aca",
+			"id": "829d7764-8cee-40cd-892d-1b8c84cea621",
 			"key": "TOKEN",
 			"value": ""
 		}

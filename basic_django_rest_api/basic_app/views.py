@@ -1,3 +1,4 @@
+from django_filters import rest_framework as filters
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, OAuth2Authentication
 from rest_condition import Or
 from rest_framework import generics
@@ -13,6 +14,8 @@ class MusicList(generics.ListCreateAPIView):
     serializer_class = MusicSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'
 
 
 class MusicDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -20,6 +23,8 @@ class MusicDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MusicSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'
 
 
 class AlbumList(generics.ListCreateAPIView):
@@ -27,6 +32,8 @@ class AlbumList(generics.ListCreateAPIView):
     serializer_class = AlbumSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'
 
 
 class AlbumDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -34,6 +41,8 @@ class AlbumDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = AlbumSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'
 
 
 class BandList(generics.ListCreateAPIView):
@@ -41,6 +50,8 @@ class BandList(generics.ListCreateAPIView):
     serializer_class = BandSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'
 
 
 class BandDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -48,6 +59,8 @@ class BandDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = BandSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'
 
 
 class MemberList(generics.ListCreateAPIView):
@@ -55,6 +68,8 @@ class MemberList(generics.ListCreateAPIView):
     serializer_class = MemberSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'
 
 
 class MemberDetail(generics.RetrieveUpdateDestroyAPIView):
@@ -62,3 +77,5 @@ class MemberDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MemberSerializer
     authentication_classes = [OAuth2Authentication, SessionAuthentication]
     permission_classes = [Or(IsAdminUser, TokenHasReadWriteScope)]
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = '__all__'

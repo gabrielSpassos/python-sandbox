@@ -4,20 +4,12 @@
 
 #### Install application
 
-* Install Django Rest Framework
+* Install Dependencies
 ```shell script
-pip3 install djangorestframework
+pip3 install -r requeriments.txt
 ```
 
-* Install OAuth Toolkit
-```shell script
-pip3 install django-oauth-toolkit
-```
-
-* Install Rest Condition
-```shell script
-pip3 install rest_condition
-```
+#### Start/Create Project
 
 * Create project 
 ```shell script
