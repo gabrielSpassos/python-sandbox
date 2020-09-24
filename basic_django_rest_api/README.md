@@ -9,6 +9,16 @@
 pip3 install djangorestframework
 ```
 
+* Install OAuth Toolkit
+```shell script
+pip3 install django-oauth-toolkit
+```
+
+* Install Rest Condition
+```shell script
+pip3 install rest_condition
+```
+
 * Create project 
 ```shell script
 django-admin startproject $project_name
@@ -41,14 +51,21 @@ python3 manage.py runserver
 
 #### Usage
 
-* [local](http://localhost:8000/musics)
+```shell script
+curl --location --request POST 'http://localhost:8000/o/token/' \
+--header 'content-type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=password' \
+--data-urlencode 'client_id=65ZBBuuDC0kpXvKAWbmN7Q042m2NNl8Lavo65Thd' \
+--data-urlencode 'client_secret=6DppUQhKBoLtNGp8Z2UASgLgbHqkCMq809gGP3WyQzK8idIOjfPm6DZN6UP9MkpNVkqvUN1wb69lY9hn90QZtOFn2yfri2ZbGewWWp7Nq5whnTYc6Py7YiLvzQ7NVCQq' \
+--data-urlencode 'username=gabriel' \
+--data-urlencode 'password=senha123'
+```
+
+```shell script
+curl --location --request GET 'http://localhost:8000/musics/' \
+--header 'Authorization: Bearer bLoZXuQOhgtgUYNztHHC0j2Vc2wcJc'
+```
 
 __or__
 
-```shell script
-curl -X POST http://127.0.0.1:8000/musics/ -H 'content-type: application/json' -d '{"title": "Music name", "seconds": 400}'
-```
-
-```shell script
-curl -X GET http://127.0.0.1:8000/musics/ -H 'Aceppt: application/json'
-```
+import [postman collection](https://github.com/gabrielSpassos/python-sandbox/blob/master/basic_django_rest_api/Python%20Basic%20Django%20App.postman_collection.json)
