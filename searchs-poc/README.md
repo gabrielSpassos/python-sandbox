@@ -27,5 +27,5 @@ python3 -m unittest -v
 
 - [X] Array Linear Search
 - [X] Array Binary Search
-- [ ] Graph BFS
-- [ ] Graph DFS
+- [X] Graph BFS
+- [X] Graph DFS

@@ -22,6 +22,24 @@ class Test(unittest.TestCase):
         target = 11
         assert False == bfs(node_one, target)
 
+    
+    def test_dfs_with_root_as_destiny(self):
+        node_one = self.create_graph()
+        target = 1
+        assert True == dfs(node_one, target)
+
+    
+    def test_dfs_should_find_path(self):
+        node_one = self.create_graph()
+        target = 10
+        assert True == dfs(node_one, target)
+
+    
+    def test_dfs_should_not_find_path(self):
+        node_one = self.create_graph()
+        target = 11
+        assert False == dfs(node_one, target)
+
 
     def create_graph(self):
         node_nine = Node(9, [])
