@@ -12,19 +12,28 @@ docker-compose up
 
 > Password: guest
 
-* Install dependencies (producer/consumer)
-```shell
-pip3 install -r requirements.txt
-```
-
 * Execute project
 ```shell
 docker-compose up
 ```
 
+* How looks like the exchange (producer)
+![Captura de tela 2024-01-07 160436](https://github.com/gabrielSpassos/python-sandbox/assets/32275521/e6f2bb80-d22a-4db4-aea9-9d804fe15cba)
+
+* Debit consumer ('DEBIT' as routing key)
+![Captura de tela 2024-01-07 160514](https://github.com/gabrielSpassos/python-sandbox/assets/32275521/bb44ab9f-cd8b-47c8-ad68-8e6d28ac371f)
+
+* Credit consumer ('CREDIT' as routing key)
+![Captura de tela 2024-01-07 160528](https://github.com/gabrielSpassos/python-sandbox/assets/32275521/3907e589-cdd2-4a55-b8a0-c8a40551b6c1)
+  
 -----
 
 Commands to run manually:
+
+* Install dependencies (producer/consumer)
+```shell
+pip3 install -r requirements.txt
+```
 
 * Run Producer
 ```shell
