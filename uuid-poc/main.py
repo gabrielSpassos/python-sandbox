@@ -4,6 +4,7 @@ import uuid
 import shortuuid
 import string
 import random
+from uuid import UUID
 
 
 def random_string(length):
@@ -34,3 +35,13 @@ print(len(str(shortuuid)))
 random_string = random_string(36)
 print(random_string)
 print(len(str(random_string)))
+
+try:
+    print(UUID('invalid_uuid'))
+except:
+    print('Invalid UUID')
+
+try:
+    print(UUID(uuidHex))
+except:
+    print('Invalid UUID 1')
