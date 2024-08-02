@@ -3,6 +3,8 @@
 assets_map = {
     'ABCB10F': 'ABCB10',
     'AURE3F': 'AURE3',
+    'B3SA3F': 'B3SA3',
+    'BBAS3F': 'BBAS3',
     'EGIE3F': 'EGIE3',
     'ENAT3F': 'ENAT3',
     'EQTL3F': 'EQTL3',
