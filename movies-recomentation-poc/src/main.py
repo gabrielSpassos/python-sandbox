@@ -21,8 +21,8 @@ tags_df = pd.read_csv("./resources/tags.csv")
 # movie_preferences_df = movie_preferences_df.merge(ratings_df, on="movieId", how="left")
 # print(movie_preferences_df)
 
-temp_df = pd.merge(movies_df, ratings_df, left_on='movieId', right_on='movieId', how='left')
-movie_preferences_df = pd.merge(temp_df, tags_df, left_on='movieId', right_on='movieId', how='left')
+movie_preferences_df = pd.merge(movies_df, ratings_df, left_on='movieId', right_on='movieId', how='left')
+# movie_preferences_df = pd.merge(temp_df, tags_df, left_on='movieId', right_on='movieId', how='left')
 print(movie_preferences_df.head())
 
 # Aggregate data to create a movie profile
@@ -46,7 +46,7 @@ print("🚀 Saving embeddings to ChromaDB...\n")
 for index, row in movie_title_input_profiles.iterrows():
     movie_id = str(row["movieId"])
     movie_description = f"Movie: {row['title']} | Id: {row['movieId']} | Genres: {row['genres']} | Average Rating: {row['rating']:.2f}"
-    print(movie_description)
+    # print(movie_description)
     embedding_movie = model.encode(movie_description).tolist()
 
     collection.add(
