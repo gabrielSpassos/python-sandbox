@@ -50,7 +50,7 @@ for index, row in movie_title_input_profiles.iterrows():
     collection.add(
         ids=[movie_id],
         embeddings=[embedding_movie],
-        metadatas=[{"description": movie_description, "rating": row["rating"]}]
+        metadatas=[{"description": movie_description, "title": row['title'], "rating": row["rating"], "view": row["count"]}]
     )
 
 print("✅ Embeddings successfully stored in ChromaDB!\n")
