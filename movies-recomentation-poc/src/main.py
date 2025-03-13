@@ -21,16 +21,34 @@ tags_df = pd.read_csv("./resources/tags.csv")
 # movie_preferences_df = movie_preferences_df.merge(ratings_df, on="movieId", how="left")
 # print(movie_preferences_df)
 
-movie_preferences_df = pd.merge(movies_df, ratings_df, left_on='movieId', right_on='movieId', how='left')
-# movie_preferences_df = pd.merge(temp_df, tags_df, left_on='movieId', right_on='movieId', how='left')
-print(movie_preferences_df.head())
+# movie_preferences_df = pd.merge(movies_df, ratings_df, left_on='movieId', right_on='movieId', how='left')
+# # movie_preferences_df = pd.merge(temp_df, tags_df, left_on='movieId', right_on='movieId', how='left')
+# print(movie_preferences_df.head())
 
-# Aggregate data to create a movie profile
-print("🔄 Processing movie profiles...\n")
-movie_title_input_profiles = movie_preferences_df.groupby("movieId").agg({
-    "title": lambda x: x.drop_duplicates() if not x.isnull().all() else "Unknown",
+# # Aggregate data to create a movie profile
+# print("🔄 Processing movie profiles...\n")
+# movie_title_input_profiles = movie_preferences_df.groupby("movieId").agg({
+#     "title": lambda x: x.drop_duplicates() if not x.isnull().all() else "Unknown",
+#     "genres": lambda x: " | ".join(set("|".join(x.dropna()).split("|"))) if not x.isnull().all() else "Unknown",
+#     "rating": "mean"
+# }).reset_index()
+# print(movie_title_input_profiles)
+
+merged = pd.merge(movies_df, ratings_df, left_on='movieId', right_on='movieId', how='left')
+print(merged.head())
+
+# Count how many times each movieId is present in the merged DataFrame
+merged_with_count = merged.groupby("movieId").size().reset_index(name='count').sort_values(by='count', ascending=False)
+print(merged_with_count)
+
+final_df = pd.merge(merged, merged_with_count, left_on='movieId', right_on='movieId', how='left')
+
+# Create movie_title_input_profiles without the count
+movie_title_input_profiles = final_df.groupby("movieId").agg({
+    "title": lambda x: x.drop_duplicates().iloc[0] if not x.isnull().all() else "Unknown",
     "genres": lambda x: " | ".join(set("|".join(x.dropna()).split("|"))) if not x.isnull().all() else "Unknown",
-    "rating": "mean"
+    "rating": "mean",
+    "count": "size"
 }).reset_index()
 print(movie_title_input_profiles)
 
@@ -45,7 +63,7 @@ print("🚀 Saving embeddings to ChromaDB...\n")
 
 for index, row in movie_title_input_profiles.iterrows():
     movie_id = str(row["movieId"])
-    movie_description = f"Movie: {row['title']} | Id: {row['movieId']} | Genres: {row['genres']} | Average Rating: {row['rating']:.2f}"
+    movie_description = f"Movie: {row['title']} | Id: {row['movieId']} | Genres: {row['genres']} | Average Rating: {row['rating']:.2f} | Views: {row['count']} "
     # print(movie_description)
     embedding_movie = model.encode(movie_description).tolist()
 
