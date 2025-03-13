@@ -21,8 +21,8 @@ tags_df = pd.read_csv("./resources/tags.csv")
 # movie_preferences_df = movie_preferences_df.merge(ratings_df, on="movieId", how="left")
 # print(movie_preferences_df)
 
-
-movie_preferences_df = pd.merge(movies_df, ratings_df, left_on='movieId', right_on='movieId', how='left')
+temp_df = pd.merge(movies_df, ratings_df, left_on='movieId', right_on='movieId', how='left')
+movie_preferences_df = pd.merge(temp_df, tags_df, left_on='movieId', right_on='movieId', how='left')
 print(movie_preferences_df.head())
 
 # Aggregate data to create a movie profile
