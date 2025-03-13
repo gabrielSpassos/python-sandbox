@@ -30,7 +30,7 @@ movie_title_input_profiles = final_df.groupby("movieId").agg({
     "rating": "mean",
     "count": "size"
 }).reset_index()
-print(movie_title_input_profiles)
+print(movie_title_input_profiles.head())
 
 print("🔍 Loading AI model...\n")
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
