@@ -1,0 +1,10 @@
+tuple = ("apple", "banana", "cherry")
+
+print("Tuple:", tuple)
+print("Size:", len(tuple))
+print("First element:", tuple[0])
+print("Last element:", tuple[-1])
+print("Slice:", tuple[1:3])
+print("Slice:", tuple[:2])
+print("Slice:", tuple[1:])
+print("Slice:", tuple[:])
