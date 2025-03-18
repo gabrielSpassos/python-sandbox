@@ -58,7 +58,7 @@ print("🚀 Saving embeddings to ChromaDB...\n")
 
 for index, row in movie_title_input_profiles.iterrows():
     movie_id = str(row["movieId"])
-    movie_description = f"Movie: {row['title']} | Year: {row['year']} | Id: {row['movieId']} | Genres: {row['genres']} | Average Rating: {row['rating']:.2f} | Views: {row['count']}"
+    movie_description = f"Year: {row['year']} | Id: {row['movieId']} | Genres: {row['genres']} | Average Rating: {row['rating']:.2f} | Views: {row['count']}"
     # print(movie_description)
     embedding_movie = model.encode(movie_description).tolist()
 
