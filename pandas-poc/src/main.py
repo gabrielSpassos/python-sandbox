@@ -40,3 +40,13 @@ movie_title_input_profiles = final_df.groupby("movieId").agg({
     "count": "size"
 }).reset_index()
 print(movie_title_input_profiles.head())
+
+for index, row in movie_title_input_profiles.iterrows():
+    movie_id = str(row["movieId"])
+    print(movie_id)
+    print(row["title"])
+    print(row["year"])
+    print(row["genres"])
+    print(row["rating"])
+    print(row["count"])
+    print("------")
