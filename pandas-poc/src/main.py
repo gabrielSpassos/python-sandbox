@@ -47,6 +47,6 @@ for index, row in movie_title_input_profiles.iterrows():
     print(row["title"])
     print(row["year"])
     print(row["genres"])
-    print(row["rating"])
-    print(row["count"])
+    print(row['rating'])
+    print(row['count'])
     print("------")
