@@ -48,5 +48,8 @@ for index, row in movie_title_input_profiles.iterrows():
     print(row["year"])
     print(row["genres"])
     print(row['rating'])
+    r = float(f"{row['rating']:.2f}")
+    print(type(r))
+    print(r)
     print(row['count'])
     print("------")
