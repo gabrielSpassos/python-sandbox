@@ -40,4 +40,6 @@ print()
 list_of_lists_of_dict = [[{'id': 1, 'name': 'gabriel'}], [{'id': 2, 'name': 'john'}], [{'id': 3, 'name': 'mike'}]]
 flat_dicts = np.array(list_of_lists_of_dict).flatten().tolist()
 result = list(map(createDictByOtherOne, flat_dicts))
+print('Other list of dictionaries:')
 print(result)
+print()
