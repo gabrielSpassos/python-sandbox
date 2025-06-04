@@ -1,0 +1,3 @@
+*.pem
+set-password.sh
+*.env
