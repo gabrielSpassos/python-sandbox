@@ -1,6 +1,7 @@
 # AWS Document DB POC
 
-- 
+- POC that connects to AWS Document db locally
+- Writes and Reads to AWS Document DB 
 
 ### Usage
 
