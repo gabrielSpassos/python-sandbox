@@ -1,14 +1,18 @@
 [
     {
-        "id": 1
+        "method": "POST",
+        "url": "https://localhost:8080/api/1"
     },
     {
-        "id": 2
+        "method": "POST",
+        "url": "https://localhost:8080/api/2"
     },
     {
-        "id": 3
+        "method": "POST",
+        "url": "https://localhost:8080/api/3"
     },
     {
-        "id": 4
+        "method": "POST",
+        "url": "https://localhost:8080/api/4"
     }
 ]

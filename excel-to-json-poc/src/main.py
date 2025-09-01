@@ -12,8 +12,19 @@ df = pd.read_csv(input_csv)
 # Column to extract
 column_name = "id"  # replace with your CSV header
 
+json_object = {
+    "method": "POST",
+    "url": "https://localhost:8080/api/$id"
+}
+
 # Create list of JSON objects
-json_list = [{"id": val} for val in df[column_name].tolist()]
+json_list = [
+    {
+        **json_object,
+        "url": json_object["url"].replace("$id", str(val))
+    }
+    for val in df[column_name].tolist()
+]
 
 # Save JSON
 with open(output_json, "w", encoding="utf-8") as f:
