@@ -7,7 +7,7 @@
 * Create virtual env
 ```
 python3 -m venv google_translate_venv
-source google_translate_poc/bin/activate
+source google_translate_venv/bin/activate
 ```
 
 * Install dependencies
