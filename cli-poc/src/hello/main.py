@@ -1,9 +1,20 @@
 import click
 
-@click.group()
-def cli():
-    """Hello CLI — available commands below."""
-    pass
+LOGO = click.style(r"""
+   _____ _      _____ 
+  / ____| |    |_   _|
+ | |    | |      | |  
+ | |    | |      | |  
+ | |____| |____ _| |_ 
+  \_____|______|_____|
+""", fg="bright_cyan")
+
+@click.group(invoke_without_command=True)
+@click.pass_context
+def cli(ctx):
+    if ctx.invoked_subcommand is None:
+        click.echo(LOGO)
+        click.echo(ctx.get_help())
 
 
 @click.command()
