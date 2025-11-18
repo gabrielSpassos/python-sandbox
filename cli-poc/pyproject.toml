@@ -8,7 +8,7 @@ dependencies = [
 ]
 
 [project.scripts]
-hello = "hello.main:greet"
+hello = "hello.main:cli"
 
 [build-system]
 requires = ["flit_core<4"]

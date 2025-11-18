@@ -25,5 +25,5 @@ hello
 
 * Run Manually
 ```
-python3 src/cli/main.py
+python3 src/hello/main.py
 ```
