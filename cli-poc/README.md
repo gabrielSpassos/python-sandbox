@@ -4,8 +4,8 @@
 
 * Create virtual env
 ```
-python3 -m venv cli_poc_venv
-source cli_poc_venv/bin/activate
+python3 -m venv .venv
+. .venv/bin/activate
 ```
 
 * Install dependencies
@@ -13,7 +13,17 @@ source cli_poc_venv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-* Run
+* Install executable
 ```
-python3 src/main.py
+pip3 install -e .
+```
+
+* Run executable
+```
+hello
+```
+
+* Run Manually
+```
+python3 src/cli/main.py
 ```
