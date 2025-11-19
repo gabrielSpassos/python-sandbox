@@ -1,5 +1,5 @@
 import click
-import datasource
+import db.datasource as datasource
 
 LOGO = click.style(r"""
   ██████╗   ██████╗ 

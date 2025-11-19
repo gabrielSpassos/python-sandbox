@@ -7,11 +7,6 @@ filename = "datasource.json"
 json_path = BASE_DIR / "resources" / filename
 
 
-# 3. Atualizar o JSON
-# loaded_data["age"] = 31
-# loaded_data["languages"].append("Go")
-
-
 def create_datasource_if_not_exists():
     if not os.path.exists(json_path):
         with open(json_path, "w") as f:
