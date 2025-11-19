@@ -30,8 +30,9 @@ def greet(name, excited):
 
 @click.command()
 @click.option('--name', prompt='Your name', help='The person to goodbye.')
-def bye(name):
-    bye = f"Goodbye, {name}!"
+@click.option('--last-name', prompt='Your last name', help='The person to goodbye.')
+def bye(name, last_name):
+    bye = f"Goodbye, {name} {last_name}!"
     click.echo(bye)
 
 
