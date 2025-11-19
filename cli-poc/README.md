@@ -8,6 +8,11 @@ python3 -m venv .venv
 . .venv/bin/activate
 ```
 
+* Deactivate virtual env
+```
+deactivate
+```
+
 * Install dependencies
 ```
 pip3 install -r requirements.txt
