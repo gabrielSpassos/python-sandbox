@@ -9,6 +9,7 @@ json_path = BASE_DIR / "resources" / filename
 
 def create_datasource_if_not_exists():
     if not os.path.exists(json_path):
+        os.makedirs(json_path.parent, exist_ok=True)
         with open(json_path, "w") as f:
             json.dump({}, f, indent=4)
 
