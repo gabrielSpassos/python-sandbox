@@ -1,4 +1,4 @@
-# CLI Hours Tracker POC + Claude Features POC
+# CLI Hours Tracker POC
 
 > Project to track working hours
 
