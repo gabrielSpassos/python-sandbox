@@ -26,3 +26,8 @@ python3 src/server.py
 ```bash
 python3 src/client.py
 ```
+
+* Deactivate venv
+```bash
+deactivate
+```
