@@ -4,8 +4,7 @@
 
 * Vector search is an AI-powered technique that finds data (text, images, audio, etc.) by converting it into numerical lists called vectors (or embeddings) and then finding items whose vectors are numerically closest, representing semantic similarity rather than just keyword matches, powering semantic search and recommendation engines. 
 
-![arch](./vectors-search-poc/embedding-search.png)
-
+![arch](https://github.com/gabrielSpassos/python-sandbox/blob/master/vectors-search-poc/embedding-search.png)
 
 ### Usage
 
