@@ -95,3 +95,21 @@ The target is *retain most of teacher model's performance while reducing size, l
         - Financial risk analyzer
 
     The teacher provides broad knowledge; the student becomes efficient and specialized.
+
+## Run POC
+
+* Configure venv
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+* Install dependencies
+```bash
+pip3 install -r requirements.txt
+```
+
+* Run application
+```bash
+python3 main.py
+```
