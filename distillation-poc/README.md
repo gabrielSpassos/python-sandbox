@@ -113,3 +113,21 @@ pip3 install -r requirements.txt
 ```bash
 python3 main.py
 ```
+
+## Output
+
+```
+Training teacher...
+Teacher epoch 1, loss=191.656
+Teacher epoch 2, loss=81.574
+Teacher epoch 3, loss=56.448
+
+Training student with distillation...
+Student epoch 1, loss=1096.061
+Student epoch 2, loss=267.952
+Student epoch 3, loss=160.331
+
+Evaluation:
+Teacher accuracy: 97.62%
+Student accuracy: 96.94%
+```
