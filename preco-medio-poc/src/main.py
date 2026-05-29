@@ -1,6 +1,17 @@
 from pathlib import Path
 import pandas as pd
 
+
+def parse_brl_number(value):
+    return (
+        str(value)
+        .replace("R$", "")
+        .replace(".", "")
+        .replace(",", ".")
+        .strip()
+    )
+
+
 # Base directory of main.py
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -41,58 +52,52 @@ buy_orders["Quantidade"] = (
 
 buy_orders["Preço"] = (
     buy_orders["Preço"]
-    .astype(str)
-    .str.replace(".", "", regex=False)
-    .str.replace(",", ".", regex=False)
+    .apply(parse_brl_number)
     .astype(float)
 )
 
 buy_orders["Valor"] = (
     buy_orders["Valor"]
-    .astype(str)
-    .str.replace(".", "", regex=False)
-    .str.replace(",", ".", regex=False)
+    .apply(parse_brl_number)
     .astype(float)
 )
 
-# Group by asset ticker
+# Group by asset
 result = (
     buy_orders.groupby("Código de Negociação")
     .agg(
-        quantity=("Quantidade", "sum"),
-        total_cost=("Valor", "sum")
+        quantidade=("Quantidade", "sum"),
+        custo_total=("Valor", "sum")
     )
     .reset_index()
 )
 
 # Calculate average price
-result["average_price"] = (
-    result["total_cost"] / result["quantity"]
+result["preco_medio"] = (
+    result["custo_total"] / result["quantidade"]
 )
 
-# Rename columns
+# Rename columns to Portuguese
 result = result.rename(
     columns={
-        "Código de Negociação": "ticker"
+        "Código de Negociação": "ativo"
     }
 )
 
 # Reorder columns
 result = result[
     [
-        "ticker",
-        "quantity",
-        "average_price",
-        "total_cost"
+        "ativo",
+        "quantidade",
+        "preco_medio",
+        "custo_total"
     ]
 ]
 
-# Round numeric values
-result["average_price"] = result["average_price"].round(2)
-result["total_cost"] = result["total_cost"].round(2)
-
-# Print final report
-print(result)
+# Round values
+result["preco_medio"] = result["preco_medio"].round(2)
+result["custo_total"] = result["custo_total"].round(2)
 
 # Save result to CSV
-result.to_csv("resources/average_price_report.csv", index=False)
+output_file = BASE_DIR / "resources" / "preco_medio.csv"
+result.to_csv(output_file, index=False)
