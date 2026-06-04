@@ -4,6 +4,12 @@
 
 ### Usage
 
+* Configure venv
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
 * Install dependencies
 ```shell
 pip3 install -r requirements.txt
